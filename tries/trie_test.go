@@ -1,30 +1,29 @@
-package elements
+package tries
 
 import "fmt"
 
 func ExampleTrie() {
-	e1 := NewElement()
-	e1.isRoot = true
+	e1 := NewTrie()
 
-	e1.Add("a", "a")
+	e1.Add("a")
 	fmt.Println(e1.GetValues())
 
-	e1.Add("b", "b")
+	e1.Add("b")
 	fmt.Println(e1.GetValues())
 
-	e1.Add("c", "c")
+	e1.Add("c")
 	fmt.Println(e1.GetValues())
 
-	e1.Add("ab", "ab")
+	e1.Add("ab")
 	fmt.Println(e1.GetValues())
 
-	e1.Add("abc", "abc")
+	e1.Add("abc")
 	fmt.Println(e1.GetValues())
 
-	e1.Add("bd", "bd")
+	e1.Add("bd")
 	fmt.Println(e1.GetValues())
 
-	e1.Add("bc", "bc")
+	e1.Add("bc")
 	fmt.Println(e1.GetValues())
 
 	// Output:

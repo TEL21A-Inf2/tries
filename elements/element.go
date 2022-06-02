@@ -15,6 +15,13 @@ func NewElement() *Element {
 	return &Element{"", "", make(map[string]*Element, 0), false}
 }
 
+// Konstruktor für eine Wurzel.
+func NewRoot() *Element {
+	result := NewElement()
+	result.isRoot = true
+	return result
+}
+
 // Liefert true, falls das Element leer ist.
 func (element *Element) IsEmpty() bool {
 	return !element.isRoot && element.key == ""
