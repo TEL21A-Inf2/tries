@@ -27,3 +27,8 @@ func (trie Trie) GetValues() []string {
 	sort.Strings(result)
 	return result
 }
+
+// Liefert alle Completions für den Key.
+func (trie Trie) Complete(key string) []string {
+	return trie.root.Complete(key)
+}

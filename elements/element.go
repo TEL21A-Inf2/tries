@@ -94,3 +94,21 @@ func (element *Element) GetValues() []string {
 	sort.Strings(result)
 	return result
 }
+
+// Liefert alle Completions für den Key.
+func (element *Element) Complete(key string) []string {
+	if key == "" {
+		return element.GetValues()
+	}
+	head, tail := key[:1], key[1:]
+	if element.isRoot {
+		if element.HasChild(head) {
+			return element.children[head].Complete(tail)
+		}
+	} else {
+		if element.HasChild(head) {
+			return element.children[head].Complete(tail)
+		}
+	}
+	return make([]string, 0)
+}
